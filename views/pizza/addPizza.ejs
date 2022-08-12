@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza App 🍕</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/pizzaForm.css" />
+  </head>
+  <body>
+    <%-include("../partials/header.ejs")%>
+
+    <div class="addPizza">
+      <h1>Add Pizza!</h1>
+      <form action="/create" method="POST" class="addPizzaForm">
+        <div>
+          <label for="pizzaName">Name</label>
+          <input name="pizzaName" type="text" />
+        </div>
+
+        <div>
+          <label for="pizzaPrice">Price</label>
+          <input name="pizzaPrice" type="number" />
+        </div>
+
+        <div>
+          <label for="pizzaImage">Image</label>
+          <input name="pizzaImage" type="text" />
+        </div>
+        <div>
+          <label for="pizzaDescription">Description</label>
+          <input name="pizzaDescription" type="textarea" />
+        </div>
+
+        <div>
+          <button class="createPizzaBtn" type="submit">Create Pizza</button>
+        </div>
+      </form>
+    </div>
+
+    <%-include("../partials/footer.ejs")%>
+  </body>
+</html>

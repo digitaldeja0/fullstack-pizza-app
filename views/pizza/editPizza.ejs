@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza App 🍕</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/pizzaForm.css" />
+  </head>
+  <body>
+    <%-include("../partials/header.ejs")%>
+
+    <div class="addPizza">
+      <h1>Edit Pizza!</h1>
+      <form method="POST" class="addPizzaForm">
+        <div>
+          <label for="pizzaName">Name</label>
+          <input name="pizzaName" type="text" value="<%=pizza.name%>" />
+        </div>
+
+        <div>
+          <label for="pizzaPrice">Price</label>
+          <input name="pizzaPrice" type="number" value="<%=pizza.price%>" />
+        </div>
+
+        <div>
+          <label for="pizzaImage">Image</label>
+          <input name="pizzaImage" type="text" value="<%=pizza.image%>" />
+        </div>
+        <div>
+          <label for="pizzaDescription">Description</label>
+          <textarea name="pizzaDescription" type="textarea">
+                <%=pizza.description%>
+            </textarea
+          >
+        </div>
+
+        <div>
+          <button class="createPizzaBtn" type="submit">Update Pizza</button>
+        </div>
+      </form>
+      <form action="/<%=pizza.id%>/delete?_method=DELETE" method="POST">
+        <button>Delete</button>
+      </form>
+    </div>
+
+    <%-include("../partials/footer.ejs")%>
+  </body>
+</html>
